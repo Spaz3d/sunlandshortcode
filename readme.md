@@ -1,3 +1,3 @@
-# Symple Shortcodes WordPress Plugin
+# Sunland RV Resorts WordPress Plugin
 
-A free Shortcodes plugin created by WPExplorer. Learn more here: http://www.wpexplorer.com/symple-shortcodes/
+Welcome to the Sunland RV Resorts WordPress plugin. This plugin was created by Kurt Bunch (https://www.kurtbunch.com) for the Sunland RV Resorts company. The plugin has some features built for their resort websites. If you have any questions or comments please contact the author directly.

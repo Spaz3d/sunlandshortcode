@@ -1,0 +1,114 @@
+/*-----------------------------------------------------------------------------------*/
+/* Global Styles
+/*-----------------------------------------------------------------------------------*/
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.cf:after {clear: both;}
+*, *::before, *::after {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/* Grid > Main Classes */
+.symple-grid { margin: 0 -10px }
+.symple-col { float: left; margin: 0 0 20px; padding: 0 10px; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
+.symple-col.symple-count-1 { clear: both; }
+.symple-col-1 { float: none }
+.symple-col-2 { width: 50% }
+.symple-col-3 { width: 33.33% }
+.symple-col-4 { width: 25% }
+.symple-col-5 { width: 20% }
+.symple-col-6 { width: 16.66666667% }
+.symple-col-7 { width: 14.28% }
+.padding_10 {padding: 0 10px}
+.padding_20 {padding: 0 20px}
+.float_left {float:left}
+.float_right {float:right}
+.padding_right_10 {padding-right:10px}
+/*-----------------------------------------------------------------------------------*/
+/* Booking Form
+/*-----------------------------------------------------------------------------------*/
+.bookingform {max-width:900px;margin: 0 auto !important;}
+.bookingform h2 {border-bottom: 1px solid rgba(0, 0, 0, 0.2);margin: 0 0 19px;padding-bottom: 10px;text-align: center;text-transform: capitalize;font-size:24px}
+.bookingform h3 {font-size: 20px;margin: 6px 0;text-transform: capitalize;}
+.light h2, .light h3, .light p, .light .secureicon {color:#363030;}
+.dark h2, .dark h3, .dark p, .dark .secureicon {color:#fff;}
+.hideme {display:none !important}
+.formlabel {font-size: 17px;margin: 0;}
+.bottomspan {margin: 10px 0 15px;}
+.dateblock {position: relative;}
+.booking-wrap{padding:5px 10px}
+.booking-wrap-horz{padding:5px}
+.bookwidget{margin:10px 0 20px;display:inline-block;width:100%;background:#660000}
+.b-form .arrival,.b-form .departure{position:relative}
+.b-form input[type="text"],.b-form input[type="email"],.b-form input[type="tel"],.b-form input[type="url"],.b-form input[type="search"],.b-form select,textarea{background:#f7f7f7 none repeat scroll 0 0;border:1px solid rgba(157,157,157,0.8);color:#323232;display:inline-block;font-family:inherit;font-size:18px;margin:8px 0;padding:.6em;text-transform:uppercase;transition:border .15s linear 0;width:100%;height:65px}
+.b-form input[type="text"]:focus{border-color:rgba(0,0,0,0.5)}
+.b-form button[type="submit"]{background:#04756e;color:#FFFFFF;height:65px;padding:0 18px;margin:8px 0;font-size:19px;font-weight:700;transition:color .18s ease,background-color .18s ease,border-color .18s ease;text-transform:uppercase;cursor:pointer;width:100%;}
+.b-form button[type="submit"]:hover{background:#5e9f9a;color:#3d5051;}
+.b-form select{width:100%}
+.md-close{margin-bottom:12px;}
+.md-close button {background: #ecb04e none repeat scroll 0 0;font-size: 1.4em;left: 50%;line-height: 1px;padding: 13px 14px;position: relative;}
+.md-close button:hover {background:#d3932a;}
+.help-block.form-error {color: #a80000;font-size: 14px;}
+#formerrors{list-style:none;padding:10px;margin:0 0 40px;border:1px solid #C2C2C2}
+#formerrors li{font-size:14px;margin:5px 0;color:#6c6c6c}
+#formerrors li i{margin-right:5px;color:#c2303c}
+.newsletter input[type="date"], .newsletter input[type="text"], .newsletter input[type="email"], .newsletter input[type="number"], .newsletter textarea {background: #f7f7f7 none repeat scroll 0 0;border: 2px solid rgba(0, 0, 0, 0.25);border-radius: 0;color: #777;padding: 8px;width:100%;}
+.newsletter input[type="submit"]:hover, .newsletter button:hover {background:#ecb04e;border:2px solid #d3932a;}
+.newsletter input[type="submit"], .newsletter button {background:#d3932a;border:2px solid #ecb04e;color:#fff;width:100%;font-size:1em;}
+.dk_theme_ci.dk_container{width:100%!important;outline:none;cursor:pointer;text-transform:uppercase;margin:8px 0!important}
+.dk_theme_ci a:hover{text-decoration:none}
+.dk_theme_ci .dk_toggle{border:1px solid rgba(157,157,157,0.8);color:rgba(0,0,0,0.7);outline:none;text-decoration:none;padding:1em;transition:.2s;position:relative;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;width:100%!important;background:#f7f7f7 none repeat scroll 0 0;font-size:17px}
+.dk_theme_ci .dk_toggle:after{font-family:FontAwesome;line-height:normal;font-weight:400;font-size:16px;content:"\f078";position:absolute;top:18px;right:19px}
+.dk_theme_ci.dk_focus .dk_toggle,.dk_theme_ci:focus .dk_toggle{border-color:#C2C2C2;transition:border-color 0 linear}
+.dk_theme_ci.dk_open .dk_toggle{color:#A9A9A9}
+.dk_theme_ci .dk_options{border:1px solid #C2C2C2;z-index:10}
+.dk_theme_ci .dk_options li{border-bottom:1px solid #C2C2C2}
+.dk_theme_ci .dk_options li:last-child{border-bottom:none}
+.dk_theme_ci .dk_options a{background:#FFF;color:#6c6c6c;text-transform:uppercase;cursor:pointer;padding:7px 8px}
+.dk_theme_ci .dk_options a:hover{background:#c2c2c2;color:#363030 !important}
+.dk_theme_ci .dk_options_inner{list-style:none;margin:0!important;padding:0!important}
+.dk_container{display:none;float:left}
+.dk_container a{outline:0}
+.dk_toggle{display:-moz-inline-stack;display:inline-block;*display:inline;position:relative;zoom:1}
+.dk_open{position:relative}
+.dk_open .dk_options{display:block}
+.dk_open .dk_label{color:inherit}
+.dk_options{display:none;margin-top:-1px;position:absolute;right:0;width:100%}
+.dk_options a,.dk_options a:link,.dk_options a:visited{display:block}
+.dk_options_inner{overflow:auto;position:relative;-webkit-overflow-scrolling:touch}
+.dk_container select{position:absolute;top:-99999em;visibility:hidden;display:none}
+.dk_mobile{position:relative}
+.dk_mobile select{display:block;width:100%;height:100%;top:0;left:0;visibility:visible;opacity:0;appearance:none;-moz-appearance:none;-webkit-appearance:none}
+.secureicon {font-weight: 600;text-align: center;text-transform: uppercase}
+.secureicon p {font-size:14px;}
+.miniicon {text-align:center;opacity:.5;padding:3px 0;font-size:13px;color:#fff}
+.newsletter {display:flex;max-width:100%;}
+.newsletterinner {margin: 0 auto;padding: 25px 0;width: 750px;}
+.tutuclass .fa {margin: auto -40px;font-size:24px;}
+.caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-dayofweek, .caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day, .caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-disabled, .caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-dayofweek, .caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day, .caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-disabled {font-size:0.95em;}
+/*-----------------------------------------------------------------------------------*/
+/* Provide some responsive support for the Sunland Shortcodes
+/*-----------------------------------------------------------------------------------*/
+@media only screen and (max-width: 959px) {
+}
+@media screen and (max-width: 860px) { 
+}
+@media only screen and (max-width: 500px) {
+	.float_left, .float_right {float:none}
+	.padding_right_10 {padding-right:0}
+	.booking-wrap-horz .group{float:none;width:100%!important;padding:0}
+	.symple-shortcodes-responsive .symple-col { width: 100%; }
+	.symple-col-1,.symple-col-2,.symple-col-3,.symple-col-4,.symple-col-5,.symple-col-6,.symple-col-7 { width: 100%;margin-bottom: 10px; }
+	.bookingform h2 {margin: 0 0 19px;padding-bottom: 10px;text-align: left;font-size:18px}
+	.bookingform h3 {font-size: 18px;margin: 4px 0;}
+}

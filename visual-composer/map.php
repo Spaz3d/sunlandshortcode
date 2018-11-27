@@ -4,7 +4,7 @@
  *
  * @package   Sunland Shortcodes
  * @author    Sunland RV Resorts
- * @copyright Copyright (c) 2017, Sunlandrvresorts.com
+ * @copyright Copyright (c) 2018, Sunlandrvresorts.com
  * @link      http://www.sunlandrvresorts.com
  * @since     1.0.0
  */

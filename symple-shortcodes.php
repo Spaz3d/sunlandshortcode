@@ -38,9 +38,6 @@ if ( ! class_exists( 'SympleShortcodes' ) ) {
 				add_action( 'admin_head', array( $this, 'add_mce_button' ) );
 				add_action( 'admin_enqueue_scripts', array( $this, 'mce_css' ) );
 
-				// Auto updates
-				require_once( $this->dir_path .'/inc/updates.php' );
-
 				// Admin panel
 				require_once( $this->dir_path .'/inc/admin.php' );
 

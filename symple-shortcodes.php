@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Sunland Shortcodes
-Description: This is the basic shortcode package for the Sunland RV Resorts websites.
+Description: This is the Sunland RV Resorts shortcode plugin that adds the RMS functionality to the website.
 Author: Sunland RV Resorts
 Author URI: http://www.sunlandrvresorts.com
 Version: 3.3
@@ -37,6 +37,9 @@ if ( ! class_exists( 'SympleShortcodes' ) ) {
 				// MCE button
 				add_action( 'admin_head', array( $this, 'add_mce_button' ) );
 				add_action( 'admin_enqueue_scripts', array( $this, 'mce_css' ) );
+
+				// Auto updates
+				require_once( $this->dir_path .'/inc/updates.php' );
 
 				// Admin panel
 				require_once( $this->dir_path .'/inc/admin.php' );
@@ -79,6 +82,59 @@ if ( ! class_exists( 'SympleShortcodes' ) ) {
 		 */
 		function load_text_domain() {
 			load_plugin_textdomain( 'symple', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/');
+		}
+
+		/**
+		 * Add filters for the TinyMCE buttton
+		 *
+		 * @since  2.0.0
+		 * @access public
+		 */
+		function add_mce_button() {
+
+			// Check user permissions
+			if ( ! current_user_can( 'edit_posts' ) && ! current_user_can( 'edit_pages' ) ) {
+				return;
+			}
+
+			// Check if WYSIWYG is enabled
+			if ( 'true' == get_user_option( 'rich_editing' ) ) {
+				add_filter( 'mce_external_plugins', array( $this, 'add_tinymce_plugin' ) );
+				add_filter( 'mce_buttons', array( $this, 'register_mce_button' ) );
+			}
+
+		}
+
+		/**
+		 * Loads the TinyMCE button js file
+		 *
+		 * @since  2.0.0
+		 * @access public
+		 */
+		function add_tinymce_plugin( $plugin_array ) {
+			$plugin_array['symple_shortcodes_mce_button'] = plugins_url( '/tinymce/symple_shortcodes_tinymce.js', __FILE__ );
+			return $plugin_array;
+		}
+
+		/**
+		 * Adds the TinyMCE button to the post editor buttons
+		 *
+		 * @since  2.0.0
+		 * @access public
+		 */
+		function register_mce_button( $buttons ) {
+			array_push( $buttons, 'symple_shortcodes_mce_button' );
+			return $buttons;
+		}
+
+		/**
+		 * Loads custom CSS for the TinyMCE editor button
+		 *
+		 * @since  2.0.0
+		 * @access public
+		 */
+		function mce_css() {
+			wp_enqueue_style('symple_shortcodes-tc', plugins_url( '/tinymce/symple_shortcodes_tinymce_style.css', __FILE__ ) );
 		}
 
 		/**
@@ -154,7 +210,7 @@ if ( ! class_exists( 'SympleShortcodes' ) ) {
 			
 			<div class="updated notice is-dismissable symple-vc-notice">
 				<a href="<?php echo esc_url( add_query_arg( 'ssvc-dismiss', '1' ) ); ?>" class="dismiss-notice" target="_parent"><span class="dashicons dashicons-no-alt" style="display:block;float:right;margin:10px 0 10px 10px;"></span></a>
-				<p><?php _e( 'This shortcode plugin needs Visual Composer to work correctly. Please be sure to activate the plugin before this one.' ); ?></p>
+				<p><?php _e( 'This shortcode plugin need Visual Composer to work correctly. Please be sure to activate the plugin before this one.' ); ?></p><p><a href="http://www.wpexplorer.com/visual-composer-wordpress-plugin/" class="button button-primary" title="<?php _e( 'Visual Composer', 'wpex' ); ?>" target="_blank"><?php _e( 'Learn More', 'wpex' ); ?></a></p>
 			</div>
 
 		<?php }

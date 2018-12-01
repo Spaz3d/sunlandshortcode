@@ -4,7 +4,7 @@
  *
  * @package   Sunland Shortcodes
  * @author    Sunland RV Resorts
- * @copyright Copyright (c) 2018, Sunlandrvresorts.com
+ * @copyright Copyright (c) 2017, Sunlandrvresorts.com
  * @link      http://www.sunlandrvresorts.com
  * @since     1.0.0
  */
@@ -29,7 +29,7 @@ add_filter( 'the_content', 'symple_fix_shortcodes' );
 function symple_bookingbox_shortcode( $atts, $content = null  ) {
 
 		extract( shortcode_atts( array(
-			'bookingurl'	=> 'https://bookings.rmscloud.com/obookings3/Search/Index/5632/90/?Rd=1',
+			'bookingurl'	=> 'https://bookings.rmscloud.com/obookings3/Search/Index/5633/90/?Rd=1',
 			'buttontext'	=> 'Book Now',
 			'fontcolor'		=> 'light',
 		), $atts ) );
@@ -37,10 +37,10 @@ function symple_bookingbox_shortcode( $atts, $content = null  ) {
 		// This is the booking box form
 			$output = '<div class="booking-wrap '. $fontcolor .' cf"><div class="bookingform">
 <form class="b-form" action="'. $bookingurl .'" id="myform" method="GET" target="_blank">
-<h2>SELECT YOUR DATES</h2>
-<div class="dateblock tutuclass"><input type="text" readonly="true" id="caleran-start" name="A" placeholder="ARRIVE"><i class="fa fa-calendar"></i></div>
-<div class="dateblock tutuclass"><input type="text" readonly="true" id="caleran-end" name="D" placeholder="DEPART"><i class="fa fa-calendar"></i></div>
-<div><h3>Have a Promo Code? Enter Below:</h3>
+<h6>select your dates</h6>
+<div class="dateblock tutuclass symple-col-2 padding_right_10 float_left"><input type="text" readonly="true" id="caleran-start" name="A" placeholder="ARRIVE"><i class="fa fa-calendar"></i></div>
+<div class="dateblock symple-col-2 float_left tutuclass"><input type="text" readonly="true" id="caleran-end" name="D" placeholder="DEPART"><i class="fa fa-calendar"></i></div>
+<div><h6>Have a Promo Code? Enter Below:</h6>
 <input type="text" id="Pc" name="Pc" placeholder="Optional"></div>
 <div class="bookbtn"><button type="submit" value="Submit" id="submit" class="booksub">'. $buttontext .'</button></div>
 </form><p class="miniicon"><i class="fa fa-lock"></i> 100% secure booking process</p></div>
@@ -57,7 +57,7 @@ add_shortcode( 'symple_bookingbox', 'symple_bookingbox_shortcode' );
 function symple_bookinghorz_shortcode( $atts, $content = null  ) {
 
 		extract( shortcode_atts( array(
-			'bookingurl'	=> 'https://bookings.rmscloud.com/obookings3/Search/Index/5632/90/?Rd=1',
+			'bookingurl'	=> 'https://bookings.rmscloud.com/obookings3/Search/Index/5633/90/?Rd=1',
 			'buttontext'	=> 'Book Now',
 			'fontcolor'		=> 'light',
 		), $atts ) );
@@ -86,7 +86,7 @@ add_shortcode( 'symple_bookinghorz', 'symple_bookinghorz_shortcode' );
 	function symple_fullbook_shortcode( $atts, $content = null  ) {
 
 		extract( shortcode_atts( array(
-			'bookingurl'	=> 'https://bookings.rmscloud.com/obookings3/Search/Index/5632/90/?Rd=1',
+			'bookingurl'	=> 'https://bookings.rmscloud.com/obookings3/Search/Index/5633/90/?Rd=1',
 			'buttontext'	=> 'Proceed to Select Site',
 			'fontcolor'		=> 'light',
 		), $atts ) );
@@ -95,14 +95,14 @@ add_shortcode( 'symple_bookinghorz', 'symple_bookinghorz_shortcode' );
 		$output = '<div class="bookingform '. $fontcolor .' cf">
 		<form class="b-form requr" action="'. $bookingurl .'" id="myform" method="get" target="_blank">
             <div class="bottomspan cf">
-            	<h2>step 1: Select Your Date Range</h2>
+            	<h6>step 1: Select Your Date Range</h6>
             <div class="dateblock symple-col-2 padding_right_10 float_left tutuclass"><input type="text" readonly="true" id="caleran-start" name="A" placeholder="ARRIVE"><i class="fa fa-calendar"></i></div>
             <div class="dateblock symple-col-2 float_left tutuclass"><input type="text" readonly="true" id="caleran-end" name="D" placeholder="DEPART"><i class="fa fa-calendar"></i></div>
             </div>
             <div class="bottomspan cf">
-            	<h2>step 2: enter Guest(s) Details</h2>
+            	<h6>step 2: enter guest(s) details</h6>
             	<div class="symple-col-3  float_left padding_right_10">
-	<h3 class="formlabel">Adults</h3>
+	<span class="formlabel">Adults</span>
 						<select name="Ad" id="adults" class="dk">
 							<option value="1">1</option>
 							<option value="2">2</option>
@@ -111,7 +111,7 @@ add_shortcode( 'symple_bookinghorz', 'symple_bookinghorz_shortcode' );
 						</select>
 					</div>
 					<div class="symple-col-3  float_left padding_right_10">
-						<h3 class="formlabel">Children</h3>
+						<span class="formlabel">Children</span>
 						<select name="C" id="child" class="dk">
 							<option selected disabled>none</option>
 							<option value="1">1</option>
@@ -121,7 +121,7 @@ add_shortcode( 'symple_bookinghorz', 'symple_bookinghorz_shortcode' );
 						</select>
 					</div>
 					<div class="symple-col-3  float_left padding_right_10">
-						<h3 class="formlabel">Pets (2 Max)</h3>
+						<span class="formlabel">Pets (2 Max)</span>
 						<select name="A1" id="pets" class="dk">
 							<option selected disabled>none</option>
 							<option value="1">1</option>
@@ -130,12 +130,12 @@ add_shortcode( 'symple_bookinghorz', 'symple_bookinghorz_shortcode' );
 					</div></div>
           <div class="bottomspan cf">
 					  <div class="symple-col-2 padding_right_10 float_left">
-            <h3 class="formlabel">Promo Code</h3>
+            <span class="formlabel">Promo Code</span>
                                 <input id="Pc" name="Pc" placeholder="Optional" type="text" />
                                 <p>Promo codes are case sensitive. Any problems please call the front desk and mention your promo code.</p>
                             </div>
            <div class="symple-col-2 float_left">
-           	<h3 class="formlabel">Next Step: Select Your Site Type</h3>
+           	<span class="formlabel">Next Step: Select Your Site Type</span>
            	<button type="submit" value="Submit" id="submit" class="booksub">'. $buttontext .'</button>
            	<p>You will be sent to our secure online booking system to select your rate and site type and complete your order.</p></div>
           </div>
@@ -157,17 +157,15 @@ add_shortcode( 'symple_fullbook', 'symple_fullbook_shortcode' );
 function symple_newsletterhorz_shortcode( $atts, $content = null  ) {
 
 		extract( shortcode_atts( array(
-			'listurl'	=> 'https://sunlandrvresorts.createsend.com/t/d/s/jhiikj/',
-			'emailinput'		=> 'cm-jhiikj-jhiikj',
+			'emailinput'		=> 'cm-jrthc-jrthc',
 		), $atts ) );
 
 		// This shows the horizontal newsletter form
 			$output = '<div class="newsletter">
-			<div class="newsletterinner"><form action="'. $listurl .'" method="post">
-			<div class="symple-col-3 padding_10 float_left"><input id="fieldName" name="cm-name" required="" type="text" placeholder="First Name" /></div>
+			<div class="newsletterinner"><form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="92D4C54F0FEC16E5ADC2B1904DE9ED1A58DC11674E8549D9FC083318FFCCE94804B02B506BBE507B0762FD8303E3E1B05E381DE0893C0F4D92F417E1BBB2786B"><div class="symple-col-3 padding_10 float_left"><input id="fieldName" name="cm-name" required="" type="text" placeholder="First Name" /></div>
 			<div class="symple-col-3 padding_10 float_left"><input id="fieldEmail" name="'. $emailinput .'" required="" type="email" placeholder="Email Address" /></div>
-			<div class="symple-col-3 padding_10 float_left"><button type="submit">Subscribe</button></div>
-			</form></div>
+			<div class="symple-col-3 padding_10 float_left js-cm-email-input"><button type="submit">Subscribe</button></div>
+			</form><script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script></div>
 			</div>';
 
 		// Return shortcode output
@@ -176,5 +174,25 @@ function symple_newsletterhorz_shortcode( $atts, $content = null  ) {
 	}
 
 add_shortcode( 'symple_newsletterhorz', 'symple_newsletterhorz_shortcode' );
+// Join Our Newsletter Stacked -------------------------------------------------------------------------- >
+function symple_newsletterstacked_shortcode( $atts, $content = null  ) {
 
+		extract( shortcode_atts( array(
+			'emailinput'		=> 'cm-jrthc-jrthc',
+		), $atts ) );
+
+		// This shows the stacked newsletter form
+			$output = '<div class="newsletter">
+			<div class="newsletterinner"><form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="92D4C54F0FEC16E5ADC2B1904DE9ED1A58DC11674E8549D9FC083318FFCCE94804B02B506BBE507B0762FD8303E3E1B05E381DE0893C0F4D92F417E1BBB2786B"><div class="paddingtb_10"><input id="fieldName" name="cm-name" required="" type="text" placeholder="First Name" /></div>
+			<div class="paddingtb_10"><input id="fieldEmail" name="'. $emailinput .'" required="" type="email" placeholder="Email Address" /></div>
+			<div class="paddingtb_10 js-cm-email-input"><button type="submit">Subscribe</button></div>
+			</form><script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script></div>
+			</div>';
+
+		// Return shortcode output
+		return $output;
+
+	}
+
+add_shortcode( 'symple_newsletterstacked', 'symple_newsletterstacked_shortcode' );
 // We Done Here -------------------------------------------------------------------------- >

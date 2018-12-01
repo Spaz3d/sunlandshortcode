@@ -34,26 +34,28 @@
 .float_left {float:left}
 .float_right {float:right}
 .padding_right_10 {padding-right:10px}
+.paddingtb_10 {padding: 10px 0}
+.paddingtb_20 {padding: 20px 0}
 /*-----------------------------------------------------------------------------------*/
 /* Booking Form
 /*-----------------------------------------------------------------------------------*/
 .bookingform {max-width:900px;margin: 0 auto !important;}
-.bookingform h2 {border-bottom: 1px solid rgba(0, 0, 0, 0.2);margin: 0 0 19px;padding-bottom: 10px;text-align: center;text-transform: capitalize;font-size:24px}
-.bookingform h3 {font-size: 20px;margin: 6px 0;text-transform: capitalize;}
-.light h2, .light h3, .light p, .light .secureicon {color:#363030;}
-.dark h2, .dark h3, .dark p, .dark .secureicon {color:#fff;}
+.bookingform h6 {margin: 0;padding-bottom: 10px;text-align: center;text-transform: capitalize;font-size:20px}
+.bookingform h3 {font-size: 18px;margin: 6px 0;text-transform: capitalize;}
+.light h6, .light .formlabel, .light p, .light .secureicon {color:#4d365b;}
+.dark h6, .dark .formlabel, .dark p, .dark .secureicon {color:#ffffff;}
 .hideme {display:none !important}
-.formlabel {font-size: 17px;margin: 0;}
+.formlabel {font-size: 18px;margin: 6px 0;font-weight:700;text-transform: capitalize}
 .bottomspan {margin: 10px 0 15px;}
 .dateblock {position: relative;}
 .booking-wrap{padding:5px 10px}
 .booking-wrap-horz{padding:5px}
 .bookwidget{margin:10px 0 20px;display:inline-block;width:100%;background:#660000}
 .b-form .arrival,.b-form .departure{position:relative}
-.b-form input[type="text"],.b-form input[type="email"],.b-form input[type="tel"],.b-form input[type="url"],.b-form input[type="search"],.b-form select,textarea{background:#f7f7f7 none repeat scroll 0 0;border:1px solid rgba(157,157,157,0.8);color:#323232;display:inline-block;font-family:inherit;font-size:18px;margin:8px 0;padding:.6em;text-transform:uppercase;transition:border .15s linear 0;width:100%;height:65px}
+.b-form input[type="text"],.b-form input[type="email"],.b-form input[type="tel"],.b-form input[type="url"],.b-form input[type="search"],.b-form select,textarea{background:#f7f7f7 none repeat scroll 0 0;border:1px solid #634575;color:#323232;display:inline-block;font-family:inherit;font-size:17px;margin:8px 0;padding:.6em;text-transform:uppercase;transition:border .15s linear 0;width:100%;height:55px}
 .b-form input[type="text"]:focus{border-color:rgba(0,0,0,0.5)}
-.b-form button[type="submit"]{background:#04756e;color:#FFFFFF;height:65px;padding:0 18px;margin:8px 0;font-size:19px;font-weight:700;transition:color .18s ease,background-color .18s ease,border-color .18s ease;text-transform:uppercase;cursor:pointer;width:100%;}
-.b-form button[type="submit"]:hover{background:#5e9f9a;color:#3d5051;}
+.b-form button[type="submit"]{background:#d97830;border:2px solid #df9055;color:#FFFFFF;height:55px;padding:0 18px;margin:8px 0;font-size:19px;font-weight:700;transition:color .18s ease,background-color .18s ease,border-color .18s ease;text-transform:uppercase;cursor:pointer;width:100%;border-radius:0}
+.b-form button[type="submit"]:hover{background:#634575;border:2px solid #634575;color:#FFF;}
 .b-form select{width:100%}
 .md-close{margin-bottom:12px;}
 .md-close button {background: #ecb04e none repeat scroll 0 0;font-size: 1.4em;left: 50%;line-height: 1px;padding: 13px 14px;position: relative;}
@@ -94,21 +96,17 @@
 .miniicon {text-align:center;opacity:.5;padding:3px 0;font-size:13px;color:#fff}
 .newsletter {display:flex;max-width:100%;}
 .newsletterinner {margin: 0 auto;padding: 25px 0;width: 750px;}
-.tutuclass .fa {margin: auto -40px;font-size:24px;}
+.tutuclass .fa {margin: auto -40px;font-size:24px;color:#634575}
 .caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-dayofweek, .caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day, .caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-disabled, .caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-dayofweek, .caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day, .caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-disabled {font-size:0.95em;}
 /*-----------------------------------------------------------------------------------*/
 /* Provide some responsive support for the Sunland Shortcodes
 /*-----------------------------------------------------------------------------------*/
-@media only screen and (max-width: 959px) {
-}
-@media screen and (max-width: 860px) { 
-}
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 768px) {
 	.float_left, .float_right {float:none}
 	.padding_right_10 {padding-right:0}
 	.booking-wrap-horz .group{float:none;width:100%!important;padding:0}
 	.symple-shortcodes-responsive .symple-col { width: 100%; }
 	.symple-col-1,.symple-col-2,.symple-col-3,.symple-col-4,.symple-col-5,.symple-col-6,.symple-col-7 { width: 100%;margin-bottom: 10px; }
-	.bookingform h2 {margin: 0 0 19px;padding-bottom: 10px;text-align: left;font-size:18px}
-	.bookingform h3 {font-size: 18px;margin: 4px 0;}
+	.bookingform h6 {margin: 0 0 19px;padding-bottom: 10px;text-align: left;font-size:18px}
+	.formlabel {font-size: 18px;margin: 4px 0;}
 }

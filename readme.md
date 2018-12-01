@@ -1,6 +1,5 @@
-# Sunland RV Resorts WordPress Plugin
+##### Sunland Shortcodes WordPress Plugin
+Welcome to the Sunland RV Resorts shortcode package. This WordPress extension was created by Kurt Bunch. The main function was to add an RMS booking form. There are some other minor features.
 
-Welcome to the Sunland RV Resorts WordPress plugin. This plugin was created by Kurt Bunch (https://www.kurtbunch.com) for the Sunland RV Resorts company. The plugin has some features built for their resort websites. If you have any questions or comments please contact the author directly.
-
-#Updated November 26 2018
-#Keep It Clean
+##### VERSION 3.0
+##### DATE UPDATED NOVEMBER 23, 2018

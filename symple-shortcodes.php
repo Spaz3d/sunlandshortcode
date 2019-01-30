@@ -4,7 +4,7 @@ Plugin Name: Sunland Shortcodes
 Description: This is the Sunland RV Resorts shortcode plugin that adds the RMS functionality to the website.
 Author: Sunland RV Resorts
 Author URI: http://www.sunlandrvresorts.com
-Version: 3.3
+Version: 3.4
 License: GNU General Public License version 2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -22,7 +22,7 @@ if ( ! class_exists( 'SympleShortcodes' ) ) {
 		public function __construct() {
 
 			// Plugin version Constant
-			define( 'SYMPLE_SHORTCODES_VERSION', '3.3' );
+			define( 'SYMPLE_SHORTCODES_VERSION', '3.4' );
 			define( 'SYMPLE_SHORTCODES_PLUGIN_SLUG', plugin_basename( __FILE__ ) );
 
 			// Define path
@@ -33,16 +33,6 @@ if ( ! class_exists( 'SympleShortcodes' ) ) {
 
 			// Admin only
 			if ( is_admin() ) {
-
-				// MCE button
-				add_action( 'admin_head', array( $this, 'add_mce_button' ) );
-				add_action( 'admin_enqueue_scripts', array( $this, 'mce_css' ) );
-
-				// Auto updates
-				require_once( $this->dir_path .'/inc/updates.php' );
-
-				// Admin panel
-				require_once( $this->dir_path .'/inc/admin.php' );
 
 				// Admin notices
 				add_action( 'admin_init', array( $this, 'admin_notice_init' ) );
@@ -85,59 +75,6 @@ if ( ! class_exists( 'SympleShortcodes' ) ) {
 		}
 
 		/**
-		 * Add filters for the TinyMCE buttton
-		 *
-		 * @since  2.0.0
-		 * @access public
-		 */
-		function add_mce_button() {
-
-			// Check user permissions
-			if ( ! current_user_can( 'edit_posts' ) && ! current_user_can( 'edit_pages' ) ) {
-				return;
-			}
-
-			// Check if WYSIWYG is enabled
-			if ( 'true' == get_user_option( 'rich_editing' ) ) {
-				add_filter( 'mce_external_plugins', array( $this, 'add_tinymce_plugin' ) );
-				add_filter( 'mce_buttons', array( $this, 'register_mce_button' ) );
-			}
-
-		}
-
-		/**
-		 * Loads the TinyMCE button js file
-		 *
-		 * @since  2.0.0
-		 * @access public
-		 */
-		function add_tinymce_plugin( $plugin_array ) {
-			$plugin_array['symple_shortcodes_mce_button'] = plugins_url( '/tinymce/symple_shortcodes_tinymce.js', __FILE__ );
-			return $plugin_array;
-		}
-
-		/**
-		 * Adds the TinyMCE button to the post editor buttons
-		 *
-		 * @since  2.0.0
-		 * @access public
-		 */
-		function register_mce_button( $buttons ) {
-			array_push( $buttons, 'symple_shortcodes_mce_button' );
-			return $buttons;
-		}
-
-		/**
-		 * Loads custom CSS for the TinyMCE editor button
-		 *
-		 * @since  2.0.0
-		 * @access public
-		 */
-		function mce_css() {
-			wp_enqueue_style('symple_shortcodes-tc', plugins_url( '/tinymce/symple_shortcodes_tinymce_style.css', __FILE__ ) );
-		}
-
-		/**
 		 * Registers/Enqueues all scripts and styles
 		 *
 		 * @since  2.0.0
@@ -156,17 +93,17 @@ if ( ! class_exists( 'SympleShortcodes' ) ) {
 
 			// Core jQuery
 			wp_enqueue_script( 'jquery' );
-			
+
 			// Booking
 			wp_enqueue_script( 'jquery.dropkick-min', $js_dir . 'jquery.dropkick-min.js', array ( 'jquery' ), '2.2.0', true );
 			wp_enqueue_script( 'symple_shortcodes_lib', $js_dir . 'symple_shortcodes_lib.js', array ( 'jquery' ), '2.2.0', true );
 			wp_enqueue_script( 'moment.min', $js_dir . 'moment.min.js', array ( 'jquery' ), '2.2.0', true );
 			wp_enqueue_script( 'caleran.min', $js_dir . 'caleran.min.js', array ( 'jquery' ), '2.2.0', true );
-						
+
 			// CSS
 			wp_enqueue_style( 'symple_shortcode_styles', $css_dir . 'symple_shortcodes_styles.css' );
-			wp_enqueue_style( 'caleran.min', $css_dir . 'caleran.min.css' );			
-			wp_enqueue_style( 'symple_dropkick_styles', $css_dir . 'dropkick.css' );			
+			wp_enqueue_style( 'caleran.min', $css_dir . 'caleran.min.css' );
+			wp_enqueue_style( 'symple_dropkick_styles', $css_dir . 'dropkick.css' );
 		}
 
 		/**
@@ -207,10 +144,10 @@ if ( ! class_exists( 'SympleShortcodes' ) ) {
 		 * @access public
 		 */
 		function vc_notice() { ?>
-			
+
 			<div class="updated notice is-dismissable symple-vc-notice">
 				<a href="<?php echo esc_url( add_query_arg( 'ssvc-dismiss', '1' ) ); ?>" class="dismiss-notice" target="_parent"><span class="dashicons dashicons-no-alt" style="display:block;float:right;margin:10px 0 10px 10px;"></span></a>
-				<p><?php _e( 'This shortcode plugin need Visual Composer to work correctly. Please be sure to activate the plugin before this one.' ); ?></p><p><a href="http://www.wpexplorer.com/visual-composer-wordpress-plugin/" class="button button-primary" title="<?php _e( 'Visual Composer', 'wpex' ); ?>" target="_blank"><?php _e( 'Learn More', 'wpex' ); ?></a></p>
+				<p><?php _e( 'This plugin will require that you have WPBakery Page Builder for WordPress installed and active. There is no longer support for classic editor.' ); ?></p><p><a href="https://codecanyon.net/item/visual-composer-page-builder-for-wordpress/242431?ref=wpexplorer" class="button button-primary" title="<?php _e( 'WPBakery Page Builder for WordPress', 'wpex' ); ?>" target="_blank"><?php _e( 'Purchase Now', 'wpex' ); ?></a></p>
 			</div>
 
 		<?php }
@@ -244,7 +181,7 @@ if ( ! class_exists( 'SympleShortcodes' ) ) {
 			$this->vc_notice_dismiss_delete();
 
 		}
-		
+
 		/**
 		 * Adds classes to the body tag
 		 *
@@ -257,7 +194,7 @@ if ( ! class_exists( 'SympleShortcodes' ) ) {
 			}
 			return $classes;
 		}
-		
+
 	}
 
 	// Start things up

@@ -4,7 +4,7 @@ Plugin Name: Sunland Shortcodes
 Description: This is the Sunland RV Resorts shortcode plugin that adds the RMS functionality to the website.
 Author: Sunland RV Resorts
 Author URI: http://www.sunlandrvresorts.com
-Version: 3.4
+Version: 3.9
 License: GNU General Public License version 2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -22,7 +22,7 @@ if ( ! class_exists( 'SympleShortcodes' ) ) {
 		public function __construct() {
 
 			// Plugin version Constant
-			define( 'SYMPLE_SHORTCODES_VERSION', '3.4' );
+			define( 'SYMPLE_SHORTCODES_VERSION', '3.9' );
 			define( 'SYMPLE_SHORTCODES_PLUGIN_SLUG', plugin_basename( __FILE__ ) );
 
 			// Define path
@@ -36,6 +36,9 @@ if ( ! class_exists( 'SympleShortcodes' ) ) {
 
 				// Admin notices
 				add_action( 'admin_init', array( $this, 'admin_notice_init' ) );
+
+				// Admin panel
+				require_once( $this->dir_path .'/inc/admin.php' );
 
 			}
 
@@ -104,6 +107,7 @@ if ( ! class_exists( 'SympleShortcodes' ) ) {
 			wp_enqueue_style( 'symple_shortcode_styles', $css_dir . 'symple_shortcodes_styles.css' );
 			wp_enqueue_style( 'caleran.min', $css_dir . 'caleran.min.css' );
 			wp_enqueue_style( 'symple_dropkick_styles', $css_dir . 'dropkick.css' );
+			wp_enqueue_style( 'font-awesome', $css_dir . 'font-awesome.min.css' );
 		}
 
 		/**
@@ -147,7 +151,7 @@ if ( ! class_exists( 'SympleShortcodes' ) ) {
 
 			<div class="updated notice is-dismissable symple-vc-notice">
 				<a href="<?php echo esc_url( add_query_arg( 'ssvc-dismiss', '1' ) ); ?>" class="dismiss-notice" target="_parent"><span class="dashicons dashicons-no-alt" style="display:block;float:right;margin:10px 0 10px 10px;"></span></a>
-				<p><?php _e( 'This plugin will require that you have WPBakery Page Builder for WordPress installed and active. There is no longer support for classic editor.' ); ?></p><p><a href="https://codecanyon.net/item/visual-composer-page-builder-for-wordpress/242431?ref=wpexplorer" class="button button-primary" title="<?php _e( 'WPBakery Page Builder for WordPress', 'wpex' ); ?>" target="_blank"><?php _e( 'Purchase Now', 'wpex' ); ?></a></p>
+				<p><?php _e( 'This plugin will require that you have WPBakery Page Builder for WordPress installed and active. There is no longer support for classic editor. Be sure to visit the Sunland Shortcode settings and add your RMS booking link for this property.' ); ?></p><p><a href="https://codecanyon.net/item/visual-composer-page-builder-for-wordpress/" class="button button-primary" title="<?php _e( 'WPBakery Page Builder for WordPress', 'wpex' ); ?>" target="_blank"><?php _e( 'Purchase Now', 'wpex' ); ?></a></p>
 			</div>
 
 		<?php }

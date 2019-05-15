@@ -41,18 +41,29 @@ function symple_shortcodes_vc_map() {
 			),
 			array(
 				'type'			=> 'textfield',
-				'admin_label'	=> true,
-				'heading'		=> __( 'Booking URL', 'symple' ),
-				'param_name'	=> 'bookingurl',
-				'value'			=> 'https://bookings.rmscloud.com/obookings3/Search/Index/5633/90/?Rd=1',
-				'description'	=> __( 'Add the booking form target', 'symple' )
-			),
-			array(
-				'type'			=> 'textfield',
 				'heading'		=> __( 'Button Text', 'symple' ),
 				'param_name'	=> 'buttontext',
 				'value'			=> 'Book Now',
 				'description'	=> __( 'Custom text for button', 'symple' )
+			),
+			array(
+				'type'			=> 'textfield',
+				'heading'		=> __( 'Topper Text', 'symple' ),
+				'param_name'	=> 'toppertext',
+				'value'			=> 'Select Your Dates',
+				'description'	=> __( 'Customize the text above the form', 'symple' )
+			),
+			array(
+				'type'       => 'textfield',
+				'heading'    => __( 'Topper Text Font Size', 'symple' ),
+				'param_name' => 'font_size',
+				'description'	=> __( 'Enter your text size in px format here', 'symple' )
+			),
+			array(
+				'type'       => 'textfield',
+				'heading'    => __( 'Text transform for topper text', 'symple' ),
+				'param_name' => 'text_transform',
+				'description'	=> __( 'Default is capitalize. Uppercase or lowercase options', 'symple' )
 			),
 		)
 	) );
@@ -77,14 +88,6 @@ function symple_shortcodes_vc_map() {
 			),
 			array(
 				'type'			=> 'textfield',
-				'admin_label'	=> true,
-				'heading'		=> __( 'Booking URL', 'symple' ),
-				'param_name'	=> 'bookingurl',
-				'value'			=> 'https://bookings.rmscloud.com/obookings3/Search/Index/5633/90/?Rd=1',
-				'description'	=> __( 'Add the booking form target', 'symple' )
-			),
-			array(
-				'type'			=> 'textfield',
 				'heading'		=> __( 'Button Text', 'symple' ),
 				'param_name'	=> 'buttontext',
 				'value'			=> 'Book Now',
@@ -100,14 +103,6 @@ function symple_shortcodes_vc_map() {
 		'category'			=> __( 'Sunland Shortcodes', 'symple' ),
 		'icon'        => 'ss-vc-icon fa fa-calendar-o',
 		'params'			=> array(
-			array(
-				'type'			=> 'textfield',
-				'admin_label'	=> true,
-				'heading'		=> __( 'Booking URL', 'symple' ),
-				'param_name'	=> 'bookingurl',
-				'value'			=> 'https://bookings.rmscloud.com/obookings3/Search/Index/5633/90/?Rd=1',
-				'description'	=> __( 'Add the booking form target', 'symple' )
-			),
 			array(
 				'type'			=> 'textfield',
 				'heading'		=> __( 'Button Text', 'symple' ),
@@ -127,56 +122,7 @@ function symple_shortcodes_vc_map() {
 			),
 		)
 	) );
-// Newsletter Horz -------------------------------------------------------------------------- >
-	vc_map( array(
-		'name'				=> __( 'Newsletter Horizontal Form', 'symple' ),
-		'base'				=> 'symple_newsletterhorz',
-		'description'		=> __( 'Adds newsletter horizontal form', 'symple' ),
-		'category'			=> __( 'Sunland Shortcodes', 'symple' ),
-		'icon'        => 'ss-vc-icon fa fa-envelope-open-o',
-		'params'			=> array(
-			array(
-				'type'			=> 'textfield',
-				'heading'		=> __( 'Email Class Name', 'symple' ),
-				'param_name'	=> 'emailinput',
-				'value'			=> 'cm-jrthc-jrthc',
-			  'description'	=> __( 'You need to have the correct email input name according to the list you have added.', 'symple' )
-			),
-			array(
-				'type'			=> 'textfield',
-				'admin_label'	=> true,
-				'heading'		=> __( 'Campaign Monitor List URL', 'symple' ),
-				'param_name'	=> 'listurl',
-				'value'			=> 'https://www.createsend.com/t/subscribeerror?description=',
-				'description'	=> __( 'Add the booking form target. You can find this in your account', 'symple' )
-			),			
-		)
-	) );
-// Newsletter Stacked -------------------------------------------------------------------------- >
-	vc_map( array(
-		'name'				=> __( 'Newsletter Stacked Form', 'symple' ),
-		'base'				=> 'symple_newsletterstacked',
-		'description'		=> __( 'Adds a stacked newsletter form', 'symple' ),
-		'category'			=> __( 'Sunland Shortcodes', 'symple' ),
-		'icon'        => 'ss-vc-icon fa fa-envelope-open-o',
-		'params'			=> array(
-			array(
-				'type'			=> 'textfield',
-				'heading'		=> __( 'Email Class Name', 'symple' ),
-				'param_name'	=> 'emailinput',
-				'value'			=> 'cm-jrthc-jrthc',
-			  'description'	=> __( 'You need to have the correct email input name according to the list you have added.', 'symple' )
-			),
-			array(
-				'type'			=> 'textfield',
-				'admin_label'	=> true,
-				'heading'		=> __( 'Campaign Monitor List URL', 'symple' ),
-				'param_name'	=> 'listurl',
-				'value'			=> 'https://www.createsend.com/t/subscribeerror?description=',
-				'description'	=> __( 'Add the booking form target. You can find this in your account', 'symple' )
-			),			
-		)
-	) );
+
 // Do not remove below this line
 }
 add_action( 'vc_before_init', 'symple_shortcodes_vc_map' );

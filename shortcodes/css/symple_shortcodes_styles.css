@@ -42,7 +42,7 @@
 .bookingform {max-width:900px;margin: 0 auto !important;}
 .bookingform h6 {margin: 0;padding-bottom: 10px;text-align: center;text-transform: capitalize;font-size:20px}
 .bookingform h3 {font-size: 18px;margin: 6px 0;text-transform: capitalize;}
-.light h6, .light .formlabel, .light p, .light .secureicon {color:#4d365b;}
+.light h6, .light .formlabel, .light p, .light .secureicon {color:#ECB04E;}
 .dark h6, .dark .formlabel, .dark p, .dark .secureicon {color:#ffffff;}
 .hideme {display:none !important}
 .formlabel {font-size: 18px;margin: 6px 0;font-weight:700;text-transform: capitalize}
@@ -52,10 +52,10 @@
 .booking-wrap-horz{padding:5px}
 .bookwidget{margin:10px 0 20px;display:inline-block;width:100%;background:#660000}
 .b-form .arrival,.b-form .departure{position:relative}
-.b-form input[type="text"],.b-form input[type="email"],.b-form input[type="tel"],.b-form input[type="url"],.b-form input[type="search"],.b-form select,textarea{background:#f7f7f7 none repeat scroll 0 0;border:1px solid #634575;color:#323232;display:inline-block;font-family:inherit;font-size:17px;margin:8px 0;padding:.6em;text-transform:uppercase;transition:border .15s linear 0;width:100%;height:55px}
+.b-form input[type="text"],.b-form input[type="email"],.b-form input[type="tel"],.b-form input[type="url"],.b-form input[type="search"],.b-form select,textarea{background:#f7f7f7 none repeat scroll 0 0;border:1px solid #D3932A;color:#323232;display:inline-block;font-family:inherit;font-size:17px;margin:8px 0;padding:.6em;text-transform:uppercase;transition:border .15s linear 0;width:100%;height:55px}
 .b-form input[type="text"]:focus{border-color:rgba(0,0,0,0.5)}
-.b-form button[type="submit"]{background:#d97830;border:2px solid #df9055;color:#FFFFFF;height:55px;padding:0 18px;margin:8px 0;font-size:19px;font-weight:700;transition:color .18s ease,background-color .18s ease,border-color .18s ease;text-transform:uppercase;cursor:pointer;width:100%;border-radius:0}
-.b-form button[type="submit"]:hover{background:#634575;border:2px solid #634575;color:#FFF;}
+.b-form button[type="submit"]{background:#ECB04E;border:2px solid #D3932A;color:#FFFFFF;height:55px;padding:0 18px;margin:8px 0;font-size:19px;font-weight:700;transition:color .18s ease,background-color .18s ease,border-color .18s ease;text-transform:uppercase;cursor:pointer;width:100%;border-radius:0}
+.b-form button[type="submit"]:hover{background:#D3932A;border:2px solid #D3932A;color:#FFF;}
 .b-form select{width:100%}
 .md-close{margin-bottom:12px;}
 .md-close button {background: #ecb04e none repeat scroll 0 0;font-size: 1.4em;left: 50%;line-height: 1px;padding: 13px 14px;position: relative;}
@@ -64,9 +64,6 @@
 #formerrors{list-style:none;padding:10px;margin:0 0 40px;border:1px solid #C2C2C2}
 #formerrors li{font-size:14px;margin:5px 0;color:#6c6c6c}
 #formerrors li i{margin-right:5px;color:#c2303c}
-.newsletter input[type="date"], .newsletter input[type="text"], .newsletter input[type="email"], .newsletter input[type="number"], .newsletter textarea {background: #f7f7f7 none repeat scroll 0 0;border: 2px solid rgba(0, 0, 0, 0.25);border-radius: 0;color: #777;padding: 8px;width:100%;}
-.newsletter input[type="submit"]:hover, .newsletter button:hover {background:#ecb04e;border:2px solid #d3932a;}
-.newsletter input[type="submit"], .newsletter button {background:#d3932a;border:2px solid #ecb04e;color:#fff;width:100%;font-size:1em;}
 .dk_theme_ci.dk_container{width:100%!important;outline:none;cursor:pointer;text-transform:uppercase;margin:8px 0!important}
 .dk_theme_ci a:hover{text-decoration:none}
 .dk_theme_ci .dk_toggle{border:1px solid rgba(157,157,157,0.8);color:rgba(0,0,0,0.7);outline:none;text-decoration:none;padding:1em;transition:.2s;position:relative;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;width:100%!important;background:#f7f7f7 none repeat scroll 0 0;font-size:17px}
@@ -94,9 +91,7 @@
 .secureicon {font-weight: 600;text-align: center;text-transform: uppercase}
 .secureicon p {font-size:14px;}
 .miniicon {text-align:center;opacity:.5;padding:3px 0;font-size:13px;color:#fff}
-.newsletter {display:flex;max-width:100%;}
-.newsletterinner {margin: 0 auto;padding: 25px 0;width: 750px;}
-.tutuclass .fa {margin: auto -40px;font-size:24px;color:#634575}
+.tutuclass .fa {margin: auto -40px;font-size:24px;color:#D3932A}
 .caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-dayofweek, .caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day, .caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-disabled, .caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-dayofweek, .caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day, .caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-disabled {font-size:0.95em;}
 /*-----------------------------------------------------------------------------------*/
 /* Provide some responsive support for the Sunland Shortcodes
